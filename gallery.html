@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - ProTrade</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo" onclick="window.location.href='index.html'">
+            <span class="pro">Pro</span><span class="trade">Trade</span>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="electronics.html">Electronics</a></li>
+                <li><a href="booking.html">Plumber</a></li>
+                <li><a href="welding.html">Welding</a></li>
+            </ul>
+            <div class="nav-auth" id="navAuth"></div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Our Service Gallery</h1>
+        <p>Explore our completed projects and quality work</p>
+    </section>
+
+    <!-- Filter Categories -->
+    <div class="service-categories">
+        <button class="category-btn active" onclick="filterGallery('all')">All</button>
+        <button class="category-btn" onclick="filterGallery('electronics')">Electronics</button>
+        <button class="category-btn" onclick="filterGallery('plumbing')">Plumbing</button>
+        <button class="category-btn" onclick="filterGallery('welding')">Welding</button>
+    </div>
+
+    <!-- Gallery Grid -->
+    <section class="gallery-grid">
+        <div class="gallery-item" data-category="electronics">
+            <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=400" alt="TV Repair">
+            <div class="gallery-overlay">
+                <h3>TV Repair</h3>
+                <p>Professional TV service</p>
+            </div>
+        </div>
+        
+        <div class="gallery-item" data-category="electronics">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400" alt="AC Repair">
+            <div class="gallery-overlay">
+                <h3>AC Maintenance</h3>
+                <p>AC service and repair</p>
+            </div>
+        </div>
+        
+        <div class="gallery-item" data-category="electronics">
+            <img src="https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=400" alt="Refrigerator">
+            <div class="gallery-overlay">
+                <h3>Refrigerator Repair</h3>
+                <p>All brands serviced</p>
+            </div>
+        </div>
+        
+        <div class="gallery-item" data-category="plumbing">
+            <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=400" alt="Plumbing Work">
+            <div class="gallery-overlay">
+                <h3>Pipe Installation</h3>
+                <p>Professional plumbing</p>
+            </div>
+        </div>
+        
+        <div class="gallery-item" data-category="plumbing">
+            <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400" alt="Drain Cleaning">
+            <div class="gallery-overlay">
+                <h3>Drain Cleaning</h3>
+                <p>Quick and efficient</p>
+            </div>
+        </div>
+        
+        <div class="gallery-item" data-category="plumbing">
+            <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400" alt="Water Heater">
+            <div class="gallery-overlay">
+                <h3>Water Heater</h3>
+                <p>Installation and repair</p>
+            </div>
+        </div>
+        
+        <div class="gallery-item" data-category="welding">
+            <img src="https://images.unsplash.com/photo-1506434304575-afbb92660c28?w=400" alt="Gate Welding">
+            <div class="gallery-overlay">
+                <h3>Gate Welding</h3>
+                <p>Custom gate design</p>
+            </div>
+        </div>
+        
+        <div class="gallery-item" data-category="welding">
+            <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=400" alt="Metal Fabrication">
+            <div class="gallery-overlay">
+                <h3>Metal Fabrication</h3>
+                <p>Custom metalwork</p>
+            </div>
+        </div>
+        
+        <div class="gallery-item" data-category="welding">
+            <img src="https://images.unsplash.com/photo-1535150502315-d8f2a68a1a88?w=400" alt="Staircase Railing">
+            <div class="gallery-overlay">
+                <h3>Staircase Railing</h3>
+                <p>Modern design</p>
+            </div>
+        </div>
+        
+        <div class="gallery-item" data-category="welding">
+            <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=400" alt="Welding Repair">
+            <div class="gallery-overlay">
+                <h3>Welding Repair</h3>
+                <p>Expert repairs</p>
+            </div>
+        </div>
+        
+        <div class="gallery-item" data-category="electronics">
+            <img src="https://images.unsplash.com/photo-1556906781-9a412961c28c?w=400" alt="Washing Machine">
+            <div class="gallery-overlay">
+                <h3>Washing Machine</h3>
+                <p>All repairs</p>
+            </div>
+        </div>
+        
+        <div class="gallery-item" data-category="plumbing">
+            <img src="https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?w=400" alt="Bathroom Plumbing">
+            <div class="gallery-overlay">
+                <h3>Bathroom Plumbing</h3>
+                <p>Full installation</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="services">
+        <h2 class="section-title">Ready to Get Started?</h2>
+        <p style="text-align: center; opacity: 0.7; margin-bottom: 30px;">Book your service today and experience professional quality</p>
+        <button class="btn" onclick="window.location.href='booking.html'">Book Now</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>ProTrade</h4>
+                <p>Your trusted partner for professional trade services.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="electronics.html">Electronics</a>
+                <a href="booking.html">Plumbing</a>
+                <a href="welding.html">Welding</a>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <a href="#">TV Repair</a>
+                <a href="#">AC Service</a>
+                <a href="#">Plumbing</a>
+                <a href="#">Welding</a>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a>
+                <a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a>
+                <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ProTrade. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <style>
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: 0.3s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 20px;
+            transform: translateY(100%);
+            transition: 0.3s;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+        
+        .gallery-overlay h3 {
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+        
+        .gallery-overlay p {
+            opacity: 0.7;
+            font-size: 14px;
+        }
+    </style>
+
+    <script src="script.js"></script>
+    <script>
+        // Gallery filter
+        function filterGallery(category) {
+            const items = document.querySelectorAll('.gallery-item');
+            const buttons = document.querySelectorAll('.category-btn');
+            
+            // Update active button
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Filter items
+            items.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Gallery image click - lightbox effect
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const img = this.querySelector('img');
+                const title = this.querySelector('h3').textContent;
+                const desc = this.querySelector('p').textContent;
+                
+                alert(`${title}\n${desc}`);
+            });
+        });
+    </script>
+</body>
+
+</html>
+

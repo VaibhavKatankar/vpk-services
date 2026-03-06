@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronics Repair - ProTrade</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo" onclick="window.location.href='index.html'">
+            <span class="pro">Pro</span><span class="trade">Trade</span>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="electronics.html">Electronics</a></li>
+                <li><a href="booking.html">Plumber</a></li>
+                <li><a href="welding.html">Welding</a></li>
+            </ul>
+            <div class="nav-auth" id="navAuth"></div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Electronics Repair Services</h1>
+        <p>Professional repair and maintenance for all your electronic devices</p>
+    </section>
+
+    <!-- Service Categories -->
+    <div class="service-categories">
+        <button class="category-btn active" onclick="filterByCategory('all')">All</button>
+        <button class="category-btn" onclick="filterByCategory('tv')">TV</button>
+        <button class="category-btn" onclick="filterByCategory('ac')">AC</button>
+        <button class="category-btn" onclick="filterByCategory('refrigerator')">Refrigerator</button>
+        <button class="category-btn" onclick="filterByCategory('washing')">Washing Machine</button>
+    </div>
+
+    <!-- Service Items -->
+    <section class="service-items">
+        <div class="service-item" data-category="tv">
+            <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=400" alt="TV Repair">
+            <div class="service-item-content">
+                <h3>TV Repair</h3>
+                <p>Professional TV repair services including LED, LCD, and Smart TVs.</p>
+                <div class="price">From $50</div>
+                <button class="btn" onclick="bookService('TV Repair')">Book Now</button>
+            </div>
+        </div>
+
+        <div class="service-item" data-category="ac">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400" alt="AC Repair">
+            <div class="service-item-content">
+                <h3>AC Repair</h3>
+                <p>Air conditioner repair, gas filling, and maintenance services.</p>
+                <div class="price">From $40</div>
+                <button class="btn" onclick="bookService('AC Repair')">Book Now</button>
+            </div>
+        </div>
+
+        <div class="service-item" data-category="refrigerator">
+            <img src="https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=400" alt="Refrigerator Repair">
+            <div class="service-item-content">
+                <h3>Refrigerator Repair</h3>
+                <p>Expert refrigerator repair for all brands and models.</p>
+                <div class="price">From $60</div>
+                <button class="btn" onclick="bookService('Refrigerator Repair')">Book Now</button>
+            </div>
+        </div>
+
+        <div class="service-item" data-category="washing">
+            <img src="https://images.unsplash.com/photo-1556906781-9a412961c28c?w=400" alt="Washing Machine Repair">
+            <div class="service-item-content">
+                <h3>Washing Machine Repair</h3>
+                <p>Professional washing machine repair and maintenance.</p>
+                <div class="price">From $45</div>
+                <button class="btn" onclick="bookService('Washing Machine Repair')">Book Now</button>
+            </div>
+        </div>
+
+        <div class="service-item" data-category="tv">
+            <img src="https://images.unsplash.com/photo-1601944179066-29786cb9d32a?w=400" alt="Microwave Repair">
+            <div class="service-item-content">
+                <h3>Microwave Repair</h3>
+                <p>Quick and reliable microwave oven repair services.</p>
+                <div class="price">From $35</div>
+                <button class="btn" onclick="bookService('Microwave Repair')">Book Now</button>
+            </div>
+        </div>
+
+        <div class="service-item" data-category="ac">
+            <img src="https://images.unsplash.com/photo-1631545806609-48cae9ff9d6c?w=400" alt="Air Cooler Repair">
+            <div class="service-item-content">
+                <h3>Air Cooler Repair</h3>
+                <p>Air cooler repair and maintenance services.</p>
+                <div class="price">From $30</div>
+                <button class="btn" onclick="bookService('Air Cooler Repair')">Book Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Our Electronics Service -->
+    <section class="services">
+        <h2 class="section-title">Why Choose Our Electronics Service?</h2>
+        
+        <div class="card">
+            <i class="fa-solid fa-certificate"></i>
+            <h2>Certified Technicians</h2>
+            <p>Our technicians are certified and experienced.</p>
+        </div>
+
+        <div class="card">
+            <i class="fa-solid fa-clock"></i>
+            <h2>Quick Turnaround</h2>
+            <p>Fast repair services with same-day availability.</p>
+        </div>
+
+        <div class="card">
+            <i class="fa-solid fa-warranty"></i>
+            <h2>Warranty</h2>
+            <p>Up to 6 months warranty on all repairs.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>ProTrade</h4>
+                <p>Your trusted partner for professional trade services.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="electronics.html">Electronics</a>
+                <a href="booking.html">Plumbing</a>
+                <a href="welding.html">Welding</a>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <a href="#">TV Repair</a>
+                <a href="#">AC Service</a>
+                <a href="#">Refrigerator</a>
+                <a href="#">Washing Machine</a>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a>
+                <a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a>
+                <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ProTrade. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - ProTrade</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo" onclick="window.location.href='index.html'">
+            <span class="pro">Pro</span><span class="trade">Trade</span>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="electronics.html">Electronics</a></li>
+                <li><a href="booking.html">Plumber</a></li>
+                <li><a href="welding.html">Welding</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Profile Section -->
+    <section class="profile-container">
+        <div class="profile-header">
+            <div class="profile-avatar">
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <div class="profile-info">
+                <h2 id="userName">User Name</h2>
+                <p id="userEmail">user@email.com</p>
+                <p style="margin-top: 5px; color: #2f7df6;">Member since 2024</p>
+            </div>
+        </div>
+
+        <div style="display: flex; gap: 10px; margin-bottom: 30px;">
+            <button class="btn" onclick="window.location.href='booking.html'">
+                <i class="fa-solid fa-plus"></i> Book New Service
+            </button>
+            <button onclick="logout()" style="background: #dc3545;">
+                <i class="fa-solid fa-sign-out-alt"></i> Logout
+            </button>
+        </div>
+
+        <div class="profile-details">
+            <h3 style="margin-bottom: 20px;">Account Information</h3>
+            
+            <div class="profile-item">
+                <span>Full Name</span>
+                <span id="profileName">John Doe</span>
+            </div>
+            
+            <div class="profile-item">
+                <span>Email</span>
+                <span id="profileEmail">user@email.com</span>
+            </div>
+            
+            <div class="profile-item">
+                <span>Phone</span>
+                <span>+1 234 567 890</span>
+            </div>
+            
+            <div class="profile-item">
+                <span>Address</span>
+                <span>123 Main Street, City</span>
+            </div>
+            
+            <div class="profile-item">
+                <span>Account Type</span>
+                <span style="color: #2f7df6;">Premium User</span>
+            </div>
+        </div>
+
+        <div class="profile-details" style="margin-top: 30px;">
+            <h3 style="margin-bottom: 20px;">My Bookings</h3>
+            
+            <div class="booking-card" data-booking-id="1">
+                <div class="booking-info">
+                    <h3>TV Repair</h3>
+                    <p>Scheduled: Jan 15, 2024</p>
+                    <p><i class="fa-solid fa-location-dot"></i> 123 Main Street</p>
+                </div>
+                <div class="booking-actions">
+                    <span class="status pending">Pending</span>
+                    <button onclick="cancelBooking(1)" style="background: #dc3545; margin-left: 10px;">Cancel</button>
+                </div>
+            </div>
+
+            <div class="booking-card" data-booking-id="2">
+                <div class="booking-info">
+                    <h3>AC Repair</h3>
+                    <p>Scheduled: Jan 10, 2024</p>
+                    <p><i class="fa-solid fa-location-dot"></i> 456 Oak Avenue</p>
+                </div>
+                <div class="booking-actions">
+                    <span class="status completed">Completed</span>
+                </div>
+            </div>
+
+            <div class="booking-card" data-booking-id="3">
+                <div class="booking-info">
+                    <h3>Plumbing Service</h3>
+                    <p>Scheduled: Dec 28, 2023</p>
+                    <p><i class="fa-solid fa-location-dot"></i> 789 Pine Road</p>
+                </div>
+                <div class="booking-actions">
+                    <span class="status completed">Completed</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-details" style="margin-top: 30px;">
+            <h3 style="margin-bottom: 20px;">Quick Actions</h3>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px;">
+                <button onclick="window.location.href='order.html'" style="padding: 20px;">
+                    <i class="fa-solid fa-list"></i><br>My Orders
+                </button>
+                <button onclick="window.location.href='gallery.html'" style="padding: 20px;">
+                    <i class="fa-solid fa-images"></i><br>Gallery
+                </button>
+                <button onclick="alert('Help center coming soon!')" style="padding: 20px;">
+                    <i class="fa-solid fa-circle-question"></i><br>Help
+                </button>
+                <button onclick="alert('Settings coming soon!')" style="padding: 20px;">
+                    <i class="fa-solid fa-gear"></i><br>Settings
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>ProTrade</h4>
+                <p>Your trusted partner for professional trade services.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="electronics.html">Electronics</a>
+                <a href="booking.html">Plumbing</a>
+                <a href="welding.html">Welding</a>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <a href="#">TV Repair</a>
+                <a href="#">AC Service</a>
+                <a href="#">Plumbing</a>
+                <a href="#">Welding</a>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a>
+                <a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a>
+                <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ProTrade. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Load user data from session
+        function loadUserData() {
+            const userData = sessionStorage.getItem('user');
+            if (userData) {
+                const user = JSON.parse(userData);
+                document.getElementById('userName').textContent = user.name || 'User';
+                document.getElementById('userEmail').textContent = user.email || 'user@email.com';
+                document.getElementById('profileName').textContent = user.name || 'User';
+                document.getElementById('profileEmail').textContent = user.email || 'user@email.com';
+            } else {
+                // Redirect to login if no user data
+                alert('Please login first!');
+                window.location.href = 'login.html';
+            }
+        }
+
+        // Logout function
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                sessionStorage.removeItem('user');
+                window.location.href = 'login.html';
+            }
+        }
+
+        // Load user data on page load
+        loadUserData();
+    </script>
+</body>
+
+</html>
+

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Service - ProTrade</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo" onclick="window.location.href='index.html'">
+            <span class="pro">Pro</span><span class="trade">Trade</span>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="electronics.html">Electronics</a></li>
+                <li><a href="booking.html">Plumber</a></li>
+                <li><a href="welding.html">Welding</a></li>
+            </ul>
+            <div class="nav-auth" id="navAuth"></div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Plumbing Services</h1>
+        <p>Professional plumbing solutions for your home and business</p>
+    </section>
+
+    <!-- Service Categories -->
+    <div class="service-categories">
+        <button class="category-btn active" onclick="filterByCategory('all')">All</button>
+        <button class="category-btn" onclick="filterByCategory('repair')">Repair</button>
+        <button class="category-btn" onclick="filterByCategory('installation')">Installation</button>
+        <button class="category-btn" onclick="filterByCategory('maintenance')">Maintenance</button>
+    </div>
+
+    <!-- Service Items -->
+    <section class="service-items">
+        <div class="service-item" data-category="repair">
+            <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=400" alt="Leak Repair">
+            <div class="service-item-content">
+                <h3>Leak Detection & Repair</h3>
+                <p>Quick and efficient leak detection and repair services.</p>
+                <div class="price">From $45</div>
+                <button class="btn" onclick="bookService('Leak Repair')">Book Now</button>
+            </div>
+        </div>
+
+        <div class="service-item" data-category="installation">
+            <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=400" alt="Pipe Installation">
+            <div class="service-item-content">
+                <h3>Pipe Installation</h3>
+                <p>Professional pipe fitting and installation services.</p>
+                <div class="price">From $80</div>
+                <button class="btn" onclick="bookService('Pipe Installation')">Book Now</button>
+            </div>
+        </div>
+
+        <div class="service-item" data-category="repair">
+            <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400" alt="Drain Cleaning">
+            <div class="service-item-content">
+                <h3>Drain Cleaning</h3>
+                <p>Professional drain cleaning and unclogging services.</p>
+                <div class="price">From $50</div>
+                <button class="btn" onclick="bookService('Drain Cleaning')">Book Now</button>
+            </div>
+        </div>
+
+        <div class="service-item" data-category="installation">
+            <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400" alt="Water Heater">
+            <div class="service-item-content">
+                <h3>Water Heater Installation</h3>
+                <p>Expert water heater installation and repair.</p>
+                <div class="price">From $120</div>
+                <button class="btn" onclick="bookService('Water Heater Installation')">Book Now</button>
+            </div>
+        </div>
+
+        <div class="service-item" data-category="maintenance">
+            <img src="https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?w=400" alt="Bathroom Plumbing">
+            <div class="service-item-content">
+                <h3>Bathroom Plumbing</h3>
+                <p>Complete bathroom plumbing solutions.</p>
+                <div class="price">From $100</div>
+                <button class="btn" onclick="bookService('Bathroom Plumbing')">Book Now</button>
+            </div>
+        </div>
+
+        <div class="service-item" data-category="maintenance">
+            <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=400" alt="Kitchen Plumbing">
+            <div class="service-item-content">
+                <h3>Kitchen Plumbing</h3>
+                <p>Professional kitchen plumbing services.</p>
+                <div class="price">From $90</div>
+                <button class="btn" onclick="bookService('Kitchen Plumbing')">Book Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section class="form-container">
+        <h2>Book a Service</h2>
+        <form id="bookingForm">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="service">Service Type</label>
+                <select id="service" name="service" required>
+                    <option value="">Select a service</option>
+                    <option value="Leak Repair">Leak Detection & Repair</option>
+                    <option value="Pipe Installation">Pipe Installation</option>
+                    <option value="Drain Cleaning">Drain Cleaning</option>
+                    <option value="Water Heater Installation">Water Heater Installation</option>
+                    <option value="Bathroom Plumbing">Bathroom Plumbing</option>
+                    <option value="Kitchen Plumbing">Kitchen Plumbing</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Service Address</label>
+                <textarea id="address" name="address" rows="3" placeholder="Enter your address" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Preferred Date</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="notes">Additional Notes</label>
+                <textarea id="notes" name="notes" rows="3" placeholder="Any additional information..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn">Submit Booking</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Why Choose Our Plumbing Service -->
+    <section class="services">
+        <h2 class="section-title">Why Choose Our Plumbing Service?</h2>
+        
+        <div class="card">
+            <i class="fa-solid fa-user-check"></i>
+            <h2>Expert Plumbers</h2>
+            <p>Licensed and experienced plumbing professionals.</p>
+        </div>
+
+        <div class="card">
+            <i class="fa-solid fa-truck-fast"></i>
+            <h2>Fast Response</h2>
+            <p>Same-day service availability.</p>
+        </div>
+
+        <div class="card">
+            <i class="fa-solid fa-check-circle"></i>
+            <h2>Satisfaction Guaranteed</h2>
+            <p>100% satisfaction on all services.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>ProTrade</h4>
+                <p>Your trusted partner for professional trade services.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="electronics.html">Electronics</a>
+                <a href="booking.html">Plumbing</a>
+                <a href="welding.html">Welding</a>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <a href="#">Leak Repair</a>
+                <a href="#">Pipe Installation</a>
+                <a href="#">Drain Cleaning</a>
+                <a href="#">Water Heater</a>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a>
+                <a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a>
+                <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ProTrade. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+

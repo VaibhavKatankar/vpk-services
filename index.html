@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProTrade - Expert Services at Your Doorstep</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo" onclick="window.location.href='index.html'">
+            <span class="pro">Pro</span><span class="trade">Trade</span>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="electronics.html">Electronics</a></li>
+                <li><a href="booking.html">Plumber</a></li>
+                <li><a href="welding.html">Welding</a></li>
+            </ul>
+            <div class="nav-auth" id="navAuth">
+                <!-- Will be populated by JavaScript based on login status -->
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Expert Services at Your Doorstep</h1>
+        <p>From complex electronics repair to professional plumbing and welding. We provide top-tier trade services with a modern touch.</p>
+        <button class="btn" onclick="scrollToSection('.services')">Get Started</button>
+    </section>
+
+    <!-- Services -->
+    <section class="services">
+        <h2 class="section-title">Our Services</h2>
+        
+        <div class="card" onclick="bookService('Electronics Repair')">
+            <i class="fa-solid fa-microchip"></i>
+            <h2>Electronics</h2>
+            <p>Repair and maintenance for all your devices.</p>
+            <button>Learn More</button>
+        </div>
+
+        <div class="card" onclick="bookService('Plumbing')">
+            <i class="fa-solid fa-wrench"></i>
+            <h2>Plumbing</h2>
+            <p>Leak detection, pipe installation, and more.</p>
+            <button>Learn More</button>
+        </div>
+
+        <div class="card" onclick="bookService('Welding')">
+            <i class="fa-solid fa-fire"></i>
+            <h2>Welding</h2>
+            <p>Structural welding and custom metalwork.</p>
+            <button>Learn More</button>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="services">
+        <h2 class="section-title">Why Choose ProTrade?</h2>
+        
+        <div class="card">
+            <i class="fa-solid fa-clock"></i>
+            <h2>Quick Service</h2>
+            <p>Fast response times and efficient service delivery.</p>
+        </div>
+
+        <div class="card">
+            <i class="fa-solid fa-shield-halved"></i>
+            <h2>Trusted Experts</h2>
+            <p>Certified professionals with years of experience.</p>
+        </div>
+
+        <div class="card">
+            <i class="fa-solid fa-headset"></i>
+            <h2>24/7 Support</h2>
+            <p>Round-the-clock customer support for all your needs.</p>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <h2 class="section-title">What Our Customers Say</h2>
+        
+        <div class="testimonial-card">
+            <p>"Excellent service! The technicians were professional and completed the repair quickly. Highly recommended!"</p>
+            <div class="testimonial-author">
+                <div class="profile-avatar"><i class="fa-solid fa-user"></i></div>
+                <div>
+                    <h4>John Smith</h4>
+                    <p>Electronics Repair</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <p>"ProTrade fixed my plumbing issue within hours. Great service and affordable prices!"</p>
+            <div class="testimonial-author">
+                <div class="profile-avatar"><i class="fa-solid fa-user"></i></div>
+                <div>
+                    <h4>Sarah Johnson</h4>
+                    <p>Plumbing Service</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fa-solid fa-phone"></i>
+                <h4>Phone</h4>
+                <p>+1 234 567 890</p>
+            </div>
+            <div class="contact-item">
+                <i class="fa-solid fa-envelope"></i>
+                <h4>Email</h4>
+                <p>info@protrade.com</p>
+            </div>
+            <div class="contact-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <h4>Address</h4>
+                <p>123 Service Street, City</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>ProTrade</h4>
+                <p>Your trusted partner for professional trade services.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="electronics.html">Electronics</a>
+                <a href="booking.html">Plumbing</a>
+                <a href="welding.html">Welding</a>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <a href="#">TV Repair</a>
+                <a href="#">AC Service</a>
+                <a href="#">Pipe Fitting</a>
+                <a href="#">Welding</a>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a>
+                <a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a>
+                <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ProTrade. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+

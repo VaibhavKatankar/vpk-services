@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welding Services - ProTrade</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo" onclick="window.location.href='index.html'">
+            <span class="pro">Pro</span><span class="trade">Trade</span>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="electronics.html">Electronics</a></li>
+                <li><a href="booking.html">Plumber</a></li>
+                <li><a href="welding.html">Welding</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Welding Services</h1>
+        <p>Professional welding and fabrication services for residential and commercial needs</p>
+    </section>
+
+    <!-- Service Categories -->
+    <div class="service-categories">
+        <button class="category-btn active" onclick="filterByCategory('all')">All</button>
+        <button class="category-btn" onclick="filterByCategory('gate')">Gates</button>
+        <button class="category-btn" onclick="filterByCategory('fabrication')">Fabrication</button>
+        <button class="category-btn" onclick="filterByCategory('repair')">Repair</button>
+        <div class="nav-auth" id="navAuth"></div>
+    </div>
+
+    <!-- Service Items -->
+    <section class="service-items">
+        <div class="service-item" data-category="gate">
+            <img src="https://images.unsplash.com/photo-1506434304575-afbb92660c28?w=400" alt="Gate Welding">
+            <div class="service-item-content">
+                <h3>Gate Welding</h3>
+                <p>Custom gate design, fabrication, and installation services.</p>
+                <div class="price">From $150</div>
+                <button class="btn" onclick="bookService('Gate Welding')">Book Now</button>
+            </div>
+        </div>
+
+        <div class="service-item" data-category="fabrication">
+            <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=400" alt="Metal Fabrication">
+            <div class="service-item-content">
+                <h3>Metal Fabrication</h3>
+                <p>Custom metal fabrication for all your construction needs.</p>
+                <div class="price">From $200</div>
+                <button class="btn" onclick="bookService('Metal Fabrication')">Book Now</button>
+            </div>
+        </div>
+
+        <div class="service-item" data-category="repair">
+            <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=400" alt="Welding Repair">
+            <div class="service-item-content">
+                <h3>Welding Repair</h3>
+                <p>Professional welding repair services for damaged metal structures.</p>
+                <div class="price">From $75</div>
+                <button class="btn" onclick="bookService('Welding Repair')">Book Now</button>
+            </div>
+        </div>
+
+        <div class="service-item" data-category="fabrication">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400" alt="Staircase Railing">
+            <div class="service-item-content">
+                <h3>Staircase Railing</h3>
+                <p>Custom staircase railing design and installation.</p>
+                <div class="price">From $180</div>
+                <button class="btn" onclick="bookService('Staircase Railing')">Book Now</button>
+            </div>
+        </div>
+
+        <div class="service-item" data-category="gate">
+            <img src="https://images.unsplash.com/photo-1535303311164-664fc9ec6532?w=400" alt="Window Grills">
+            <div class="service-item-content">
+                <h3>Window Grills</h3>
+                <p>Security window grills design and installation.</p>
+                <div class="price">From $100</div>
+                <button class="btn" onclick="bookService('Window Grills')">Book Now</button>
+            </div>
+        </div>
+
+        <div class="service-item" data-category="fabrication">
+            <img src="https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=400" alt="Furniture Fabrication">
+            <div class="service-item-content">
+                <h3>Furniture Fabrication</h3>
+                <p>Custom metal furniture design and manufacturing.</p>
+                <div class="price">From $120</div>
+                <button class="btn" onclick="bookService('Furniture Fabrication')">Book Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Our Welding Service -->
+    <section class="services">
+        <h2 class="section-title">Why Choose Our Welding Service?</h2>
+        
+        <div class="card">
+            <i class="fa-solid fa-hammer"></i>
+            <h2>Expert Welders</h2>
+            <p>Skilled professionals with years of experience.</p>
+        </div>
+
+        <div class="card">
+            <i class="fa-solid fa-certificate"></i>
+            <h2>Certified Quality</h2>
+            <p>ISO certified welding services.</p>
+        </div>
+
+        <div class="card">
+            <i class="fa-solid fa-tools"></i>
+            <h2>Modern Equipment</h2>
+            <p>Latest welding technology and tools.</p>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery-grid">
+        <img src="https://images.unsplash.com/photo-1506434304575-afbb92660c28?w=300" alt="Welding Work 1">
+        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=300" alt="Welding Work 2">
+        <img src="https://images.unsplash.com/photo-1535150502315-d8f2a68a1a88?w=300" alt="Welding Work 3">
+        <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=300" alt="Welding Work 4">
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>ProTrade</h4>
+                <p>Your trusted partner for professional trade services.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="electronics.html">Electronics</a>
+                <a href="booking.html">Plumbing</a>
+                <a href="welding.html">Welding</a>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <a href="#">Gate Welding</a>
+                <a href="#">Fabrication</a>
+                <a href="#">Repair</a>
+                <a href="#">Installation</a>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a>
+                <a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a>
+                <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ProTrade. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+

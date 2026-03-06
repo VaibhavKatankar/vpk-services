@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - ProTrade</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Admin Container -->
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h3><i class="fa-solid fa-gauge"></i> Admin Panel</h3>
+            <ul>
+                <li><a href="#" class="active" onclick="showSection('dashboard')"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+                <li><a href="#" onclick="showSection('orders')"><i class="fa-solid fa-list"></i> Orders</a></li>
+                <li><a href="#" onclick="showSection('services')"><i class="fa-solid fa-tools"></i> Services</a></li>
+                <li><a href="#" onclick="showSection('users')"><i class="fa-solid fa-users"></i> Users</a></li>
+                <li><a href="#" onclick="showSection('reports')"><i class="fa-solid fa-chart-bar"></i> Reports</a></li>
+                <li><a href="#" onclick="logout()"><i class="fa-solid fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Dashboard Section -->
+            <div id="dashboard-section">
+                <h2 style="margin-bottom: 30px;">Dashboard Overview</h2>
+                
+                <!-- Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h2 id="totalOrders">156</h2>
+                        <p>Total Orders</p>
+                    </div>
+                    <div class="stat-card">
+                        <h2 id="pendingOrders">23</h2>
+                        <p>Pending Orders</p>
+                    </div>
+                    <div class="stat-card">
+                        <h2 id="completedOrders">128</h2>
+                        <p>Completed</p>
+                    </div>
+                    <div class="stat-card">
+                        <h2>$12,450</h2>
+                        <p>Total Revenue</p>
+                    </div>
+                </div>
+
+                <!-- Recent Orders -->
+                <h3 style="margin: 30px 0 20px;">Recent Orders</h3>
+                <div class="orders-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Service</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ordersTable">
+                            <tr>
+                                <td>#ORD-001</td>
+                                <td>John Smith</td>
+                                <td>TV Repair</td>
+                                <td>Jan 15, 2024</td>
+                                <td><span class="status pending">Pending</span></td>
+                                <td>
+                                    <button class="accept" onclick="updateStatus(this, 'completed')"><i class="fa-solid fa-check"></i></button>
+                                    <button class="reject" onclick="updateStatus(this, 'cancelled')"><i class="fa-solid fa-times"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-002</td>
+                                <td>Sarah Johnson</td>
+                                <td>AC Repair</td>
+                                <td>Jan 14, 2024</td>
+                                <td><span class="status completed">Completed</span></td>
+                                <td>
+                                    <button class="accept" onclick="updateStatus(this, 'completed')"><i class="fa-solid fa-check"></i></button>
+                                    <button class="reject" onclick="updateStatus(this, 'cancelled')"><i class="fa-solid fa-times"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-003</td>
+                                <td>Mike Davis</td>
+                                <td>Plumbing</td>
+                                <td>Jan 13, 2024</td>
+                                <td><span class="status pending">Pending</span></td>
+                                <td>
+                                    <button class="accept" onclick="updateStatus(this, 'completed')"><i class="fa-solid fa-check"></i></button>
+                                    <button class="reject" onclick="updateStatus(this, 'cancelled')"><i class="fa-solid fa-times"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-004</td>
+                                <td>Emily Brown</td>
+                                <td>Welding</td>
+                                <td>Jan 12, 2024</td>
+                                <td><span class="status completed">Completed</span></td>
+                                <td>
+                                    <button class="accept" onclick="updateStatus(this, 'completed')"><i class="fa-solid fa-check"></i></button>
+                                    <button class="reject" onclick="updateStatus(this, 'cancelled')"><i class="fa-solid fa-times"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-005</td>
+                                <td>David Wilson</td>
+                                <td>Refrigerator</td>
+                                <td>Jan 11, 2024</td>
+                                <td><span class="status cancelled">Cancelled</span></td>
+                                <td>
+                                    <button class="accept" onclick="updateStatus(this, 'completed')"><i class="fa-solid fa-check"></i></button>
+                                    <button class="reject" onclick="updateStatus(this, 'cancelled')"><i class="fa-solid fa-times"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Orders Section (Hidden by default) -->
+            <div id="orders-section" style="display: none;">
+                <h2 style="margin-bottom: 30px;">All Orders</h2>
+                
+                <div style="margin-bottom: 20px;">
+                    <input type="text" placeholder="Search orders..." style="padding: 10px; width: 300px; border-radius: 5px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.1); color: white;">
+                    <select style="padding: 10px; border-radius: 5px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.1); color: white;">
+                        <option>All Status</option>
+                        <option>Pending</option>
+                        <option>Completed</option>
+                        <option>Cancelled</option>
+                    </select>
+                </div>
+
+                <div class="orders-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Service</th>
+                                <th>Address</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#ORD-001</td>
+                                <td>John Smith</td>
+                                <td>TV Repair</td>
+                                <td>123 Main St</td>
+                                <td>Jan 15, 2024</td>
+                                <td><span class="status pending">Pending</span></td>
+                                <td><button>View</button></td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-002</td>
+                                <td>Sarah Johnson</td>
+                                <td>AC Repair</td>
+                                <td>456 Oak Ave</td>
+                                <td>Jan 14, 2024</td>
+                                <td><span class="status completed">Completed</span></td>
+                                <td><button>View</button></td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-003</td>
+                                <td>Mike Davis</td>
+                                <td>Plumbing</td>
+                                <td>789 Pine Rd</td>
+                                <td>Jan 13, 2024</td>
+                                <td><span class="status pending">Pending</span></td>
+                                <td><button>View</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Services Section (Hidden by default) -->
+            <div id="services-section" style="display: none;">
+                <h2 style="margin-bottom: 30px;">Manage Services</h2>
+                
+                <div class="services">
+                    <div class="card">
+                        <i class="fa-solid fa-microchip"></i>
+                        <h3>Electronics</h3>
+                        <p>45 active bookings</p>
+                        <button>Edit</button>
+                    </div>
+                    <div class="card">
+                        <i class="fa-solid fa-wrench"></i>
+                        <h3>Plumbing</h3>
+                        <p>38 active bookings</p>
+                        <button>Edit</button>
+                    </div>
+                    <div class="card">
+                        <i class="fa-solid fa-fire"></i>
+                        <h3>Welding</h3>
+                        <p>25 active bookings</p>
+                        <button>Edit</button>
+                    </div>
+                    <div class="card">
+                        <i class="fa-solid fa-plus"></i>
+                        <h3>Add Service</h3>
+                        <p>Create new service</p>
+                        <button>Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Users Section (Hidden by default) -->
+            <div id="users-section" style="display: none;">
+                <h2 style="margin-bottom: 30px;">User Management</h2>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h2>245</h2>
+                        <p>Total Users</p>
+                    </div>
+                    <div class="stat-card">
+                        <h2>180</h2>
+                        <p>Active Users</p>
+                    </div>
+                    <div class="stat-card">
+                        <h2>65</h2>
+                        <p>New This Month</p>
+                    </div>
+                </div>
+
+                <div class="orders-table" style="margin-top: 30px;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>User ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Joined</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#USR-001</td>
+                                <td>John Smith</td>
+                                <td>john@email.com</td>
+                                <td>Jan 2024</td>
+                                <td><span class="status completed">Active</span></td>
+                                <td><button>Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>#USR-002</td>
+                                <td>Sarah Johnson</td>
+                                <td>sarah@email.com</td>
+                                <td>Dec 2023</td>
+                                <td><span class="status completed">Active</span></td>
+                                <td><button>Edit</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Reports Section (Hidden by default) -->
+            <div id="reports-section" style="display: none;">
+                <h2 style="margin-bottom: 30px;">Reports & Analytics</h2>
+                
+                <div class="card" style="width: 100%; margin-bottom: 20px;">
+                    <h3>Monthly Revenue</h3>
+                    <p style="margin-top: 10px;">$12,450 this month</p>
+                    <div style="height: 200px; background: rgba(255,255,255,0.05); margin-top: 15px; border-radius: 10px; display: flex; align-items: flex-end; justify-content: space-around; padding: 20px;">
+                        <div style="width: 40px; height: 60%; background: #2f7df6; border-radius: 5px;"></div>
+                        <div style="width: 40px; height: 80%; background: #2f7df6; border-radius: 5px;"></div>
+                        <div style="width: 40px; height: 45%; background: #2f7df6; border-radius: 5px;"></div>
+                        <div style="width: 40px; height: 90%; background: #2f7df6; border-radius: 5px;"></div>
+                        <div style="width: 40px; height: 70%; background: #2f7df6; border-radius: 5px;"></div>
+                        <div style="width: 40px; height: 85%; background: #2f7df6; border-radius: 5px;"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Check if admin user
+        function checkAdmin() {
+            const userData = sessionStorage.getItem('user');
+            if (userData) {
+                const user = JSON.parse(userData);
+                if (user.type !== 'admin') {
+                    alert('Access denied! Admin only.');
+                    window.location.href = 'login.html';
+                }
+            } else {
+                alert('Please login first!');
+                window.location.href = 'login.html';
+            }
+        }
+
+        // Show section
+        function showSection(section) {
+            const sections = ['dashboard', 'orders', 'services', 'users', 'reports'];
+            sections.forEach(s => {
+                document.getElementById(s + '-section').style.display = 'none';
+            });
+            document.getElementById(section + '-section').style.display = 'block';
+            
+            // Update active sidebar
+            document.querySelectorAll('.sidebar a').forEach(a => a.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        // Update order status
+        function updateStatus(btn, status) {
+            const row = btn.closest('tr');
+            const statusCell = row.querySelector('.status');
+            
+            if (status === 'completed') {
+                statusCell.className = 'status completed';
+                statusCell.textContent = 'Completed';
+                alert('Order marked as completed!');
+            } else if (status === 'cancelled') {
+                statusCell.className = 'status cancelled';
+                statusCell.textContent = 'Cancelled';
+                alert('Order cancelled!');
+            }
+            
+            updateStats();
+        }
+
+        // Update statistics
+        function updateStats() {
+            const rows = document.querySelectorAll('#ordersTable tr');
+            let pending = 0, completed = 0, cancelled = 0;
+            
+            rows.forEach(row => {
+                const status = row.querySelector('.status');
+                if (status.classList.contains('pending')) pending++;
+                else if (status.classList.contains('completed')) completed++;
+                else if (status.classList.contains('cancelled')) cancelled++;
+            });
+            
+            document.getElementById('pendingOrders').textContent = pending;
+            document.getElementById('completedOrders').textContent = completed;
+        }
+
+        // Logout
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                sessionStorage.removeItem('user');
+                window.location.href = 'login.html';
+            }
+        }
+
+        // Check admin on load
+        checkAdmin();
+    </script>
+</body>
+
+</html>
+
